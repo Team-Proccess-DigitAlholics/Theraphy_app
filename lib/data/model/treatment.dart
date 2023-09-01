@@ -26,4 +26,14 @@ class Treatment{
     };
   }
 
+  Treatment.fromJson(Map<String, dynamic> json)
+    : this(
+      id: json['id'],
+      title: json['title'],
+      description: json['description'],
+      sessionsQuantity: json['sessionsQuantity'],
+      physiotherapistId: json['physiotherapistId'] ?? 0, // Corregir la clave a 'physiotherapistId'
+      photoUrl: json['photoUrl']
+    );
+
 }
