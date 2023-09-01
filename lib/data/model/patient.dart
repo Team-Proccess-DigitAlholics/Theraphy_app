@@ -35,4 +35,19 @@ class Patient{
       'userId': userId,
     };
   }
+
+  
+   Patient.fromJson(Map<String, dynamic> json)
+      : this(
+            id: json['id'],
+            userId: json['userId'],
+            firstName: json['firstName'],
+            lastName: json['lastName'],
+            age: json['age'],
+            birthdayDate: json['birthdayDate'],
+            email: json['email'],
+            appointmentQuantity: json['appointmentQuantity'],
+            photoUrl: json['photoUrl']
+            );
+
 }
