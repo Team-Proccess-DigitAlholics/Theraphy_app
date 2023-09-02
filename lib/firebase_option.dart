@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
-
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:theraphy_physiotherapist_app/firebase_options.dart';
-import 'package:theraphy_physiotherapist_app/ui/initial_views/login.dart';
+import 'package:therapy_app/firebase_options.dart';
+//import 'package:theraphy_physiotherapist_app/ui/initial_views/login.dart';
 
 void main() async {
 
