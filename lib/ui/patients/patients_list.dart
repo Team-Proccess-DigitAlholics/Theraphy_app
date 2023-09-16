@@ -88,7 +88,6 @@ class _PatientsListState extends State<PatientsList> {
                     filteredPatients = myPatients
                         ?.where((patient) =>
                             ('${patient.firstName} ${patient.lastName}')
-                                .toLowerCase()
                                 .contains(value.toLowerCase()))
                         .toList();
                   });
