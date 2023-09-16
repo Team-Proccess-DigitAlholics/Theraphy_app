@@ -13,7 +13,6 @@ class ListAppointments extends StatefulWidget {
 
 class _ListAppointmentsState extends State<ListAppointments> {
   String searchText = '';
-  int _currentIndex = 2;
   int selectedIndex = 2;
   int currentUser = 3;
   List<Appointment>? myAppointments = [];
@@ -57,9 +56,7 @@ class _ListAppointmentsState extends State<ListAppointments> {
     });
 
     appointments?.forEach((appointment) {
-      if (appointment.physiotherapist.id == currentUser) {  
-          
-      }
+ 
     });
 
     appointments = myAppointments;
@@ -104,14 +101,7 @@ class _ListAppointmentsState extends State<ListAppointments> {
           children: [
             TextField(
               onChanged: (value) {
-                setState(() {
-                   appointments = myAppointments
-                        ?.where((patient) =>
-                            ('${patient.patient.firstName} ${patient.patient.lastName}')
-                                .toLowerCase()
-                                .contains(value.toLowerCase()))
-                        .toList();
-                });
+               
                 //
               },
               decoration: InputDecoration(
@@ -140,25 +130,21 @@ class _ListAppointmentsState extends State<ListAppointments> {
                       child: Container(
                         alignment: Alignment.center, // Centra el contenido
                         child: ListTile(
-                          leading: Image.network(
-                            appointments![index].patient.photoUrl,
-                            width: 50,
-                            height: 50,
-                          ), // Ruta de la imagen
-                          title: Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
+                          // Ruta de la imagen
+                          title: const Padding(
+                            padding: EdgeInsets.only(bottom: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment
                                   .start, // Centra los elementos horizontalmente
                               children: [
                                 Text(
-                                  "${appointments![index].patient.firstName} ${appointments![index].patient.lastName}",
-                                  style: const TextStyle(
+                                  "appointments",
+                                  style: TextStyle(
                                     color: Colors.white, // Color blanco
                                   ),
                                 ),
 
-                                const SizedBox(
+                                SizedBox(
                                   width: 10,
                                 ), // Espacio entre los elementos
                               ],
@@ -441,13 +427,10 @@ class _MyAppointmentState extends State<MyAppointment> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.0),
-                child: SizedBox(
+                child: const SizedBox(
                   width: 330,
                   height: 250,
-                  child: Image.network(
-                    widget.appointment.patient.photoUrl,
-                    fit: BoxFit.cover,
-                  ),
+                  
                 ),
               ),
               const SizedBox(height: 30),
@@ -461,17 +444,11 @@ class _MyAppointmentState extends State<MyAppointment> {
                   ),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: Row(
+                child: const Row(
                   children: [
-                    Text(
-                      widget.appointment.patient.firstName,
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                    const SizedBox(width: 5),
-                    Text(
-                      widget.appointment.patient.lastName,
-                      style: const TextStyle(fontSize: 16),
-                    ),
+                    
+                    SizedBox(width: 5),
+                    
                   ],
                 ),
               ),
