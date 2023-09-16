@@ -28,7 +28,7 @@ class _PatientsListState extends State<PatientsList> {
 
   Future initialize() async {
     
-    bool equalElement(int number) {
+    bool equalElement(int number) {    
       if (myPatients != null) {
         for (var patient in myPatients!) {
           if (patient.id == number) {
